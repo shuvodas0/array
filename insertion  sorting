@@ -1,0 +1,29 @@
+/*Insertion Sort*/ 
+#include<stdio.h> 
+void Insertion(int Array[],int size) 
+{ 
+Int i,j,swap; 
+for(i=1;i<size;i++){ 
+ swap=Array[i]; 
+ j=i-1; 
+while(swap<Array[j] && j>=0){ 
+Array[j+1]=Array[j]; 
+ j--; 
+ } 
+ Array[j+1]=swap; 
+ } 
+} 
+void main(){ 
+int i,size; 
+ printf("Enter Size of Array:"); 
+scanf("%d",&size); 
+ int Array[size]; 
+printf("Enter Elements in Array:"); 
+for(i=0;i<size;i++){ scanf("%d",&Array[i]); 
+ } 
+ Insertion(Array,size); 
+ printf("The Result Array is:"); 
+for(i=0;i<size;i++){ 
+printf("%d ",Array[i]); 
+ } 
+} 
