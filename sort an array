@@ -1,0 +1,36 @@
+/*Selection Sort*/ 
+#include<stdio.h> 
+int Small_find(int Array[],intsize,int index) 
+{ inti,small=Array[index]; 
+for(i=index+1;i<size;i++){ 
+ if(Array[i]<small){ 
+small=Array[i]; 
+index=i; 
+ } 
+ } 
+ return index; 
+} 
+void Selection_sort(int Array[],int size) 
+{ int i,small,swap; 
+for(i=0;i<size;i++){ 
+small=Small_find(Array,size,i); 
+swap=Array[i]; 
+ Array[i]=Array[small]; 
+ Array[small]=swap; 
+ } 
+} 
+void main(){ 
+intsize,i; 
+ printf("Enter Size of Array:"); 
+scanf("%d",&size); 
+ int Array[size]; 
+printf("Enter Elements in Array:"); 
+for(i=0;i<size;i++){ 
+scanf("%d",&Array[i]); 
+ } 
+Selection_sort(Array,size); 
+ printf("The Result Array is:"); 
+for(i=0;i<size;i++){ 
+printf("%d ",Array[i]); 
+ } 
+}
